@@ -1,0 +1,36 @@
+Conclusiones Prueba API (PetStore) ejercicio 3
+
+
+Sobre la API
+
+La API de PetStore respondio bien a todo el CRUD de usuarios. No pide autenticacion
+para el endpoint /user entonces las pruebas se hicieron directo sin tokens ni nada extra.
+
+Sobre cada endpoint
+POST /user: Creé el usuario y me devolvió un JSON con code 200 y el ID en el campo
+message. le mandé el objeto completo en el body.
+
+GET /user/{username}: Trae todos los campos del usuario. Si no existe regresa 404.
+
+PUT /user/{username}: Deja actualizar lo que necesite. Yo actualice el firstName y el
+email, y al hacer el GET despues ya estaban con los valores  nuevos.
+
+DELETE /user/{username}: Borre el usuario y respondió 200. En el message manda el
+username que se elimino.
+
+
+Observaciones
+Para no tener problemas con datos repetidos de corridas anteriores, el username lo genero
+con un timestamp cada vez que corren las pruebas, así cada ejecución usa su propio usuario.
+No hubo problemas de consistencia, todo lo que se creó o actualizó estaba disponible
+de inmediato en las consultas siguientes.
+La API no pide autenticación para nada de usuarios, eso hace fácil automatizar pero
+en un ambiente real sería un problema de seguridad.
+
+
+Sobre la implementacion
+Use Cypress con cy.request() para las llamadas HTTP. Las operaciones estan en una clase
+tipo Service Object que es basicamente lo mismo que POM pero enfocado a APIs. Los
+escenarios van en Gherkin en español con Cucumber.
+
+Corre en aprox 2 segundo todo.

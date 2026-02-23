@@ -1,0 +1,9 @@
+{
+  "username": "standard_user",
+  "password": "secret_sauce",
+  "checkout": {
+    "firstName": "Carlos",
+    "lastName": "Perez",
+    "postalCode": "170150"
+  }
+}

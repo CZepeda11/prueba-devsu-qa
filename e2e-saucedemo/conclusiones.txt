@@ -1,0 +1,29 @@
+Hallazgos y conclusiones Prueba E2E (SauceDemo) Opcion 2
+
+
+Sobre el sitio
+
+El sitio de saucedemo es estable, carga rapido y no tuve que meter esperas explicitas
+en ningun paso. Los selectores son buenos porque usa Ids unicos en los campos y atributos
+data-test en los botones de productos, entonces no hay necesidad de usar XPaths.
+
+
+Sobre el flujo
+El flujo va asi: Login, Inventario, Carrito, Checkout y Confirmacion. Es bastante directo
+
+Las credenciales standard_user / secret_sauce  funcionan bien y dan acceso a todo el
+inventario. El badge del carrito se actualiza al momento cuando agregas un producto.
+
+El form de checkout valida campos vacios antes de dejar avanzar, eso podria servir
+para meter pruebas negativas despues.
+Algo que note es que el mensaje de confirmacion se ve en mayusculas en la pantalla pero
+en el DOM esta como "Thank you for your order!" porque tiene un text-transform en CSS.
+Para que no fallara por eso la validacion la hice  sin distinguir mayusculas.
+
+
+Sobre la implementacion
+Implemente el patron POM para tener cada pantalla separada en su clase con selectores
+y acciones. Los escenarios estan escritos en Gherkin en español con Cucumber asi quedan
+faciles de leer para cualquiera.
+
+Todo el flujo corre en aprox 4 segundos.

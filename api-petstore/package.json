@@ -1,0 +1,15 @@
+{
+  "name": "api-petstore",
+  "version": "1.0.0",
+  "description": "Prueba API - CRUD de usuarios en PetStore",
+  "author": "César Zepeda",
+  "scripts": {
+    "test": "cypress run --headed --browser chrome",
+    "open": "cypress open"
+  },
+  "devDependencies": {
+    "cypress": "~13.6.0",
+    "@badeball/cypress-cucumber-preprocessor": "^21.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0"
+  }
+}
